@@ -1,0 +1,20 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+#container {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 50px;
+    margin: auto;
+    width: 320px;
+    height: 320px;
+}
+
+.grid-item {
+    width: calc(100% / 16);
+    height: calc(100% / 16);
+    border: 1px solid #000;
+    box-sizing: border-box;
+}
