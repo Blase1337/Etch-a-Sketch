@@ -12,13 +12,24 @@ h1 {
     flex-wrap: wrap;
     padding-top: 50px;
     margin: auto;
-    width: 320px;
-    height: 320px;
+    width: 480px;
+    height: 480px;
 }
 
 .grid-item {
-    width: calc(100% / 16);
-    height: calc(100% / 16);
+    flex: 1 0 calc(100% / var(--grid-size));
+    height: calc(100% / var(--grid-size));
     border: 1px solid #000;
     box-sizing: border-box;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px;
+    margin: 10px;
 }

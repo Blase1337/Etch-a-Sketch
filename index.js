@@ -1,17 +1,46 @@
 let container = document.getElementById("container")
+let sizeBtn = document.getElementById("sizeBtn")
 
-for (let row = 0; row < 16; row++){ // for loop to create 16x16 grid
-    for (let col = 0; col < 16; col++){
+resetBtn = document.getElementById("resetBtn")
+
+resetBtn.addEventListener('click', () => {
+    const gridItems = document.querySelectorAll(".grid-item");
+    gridItems.forEach(item => {
+            item.style.backgroundColor = "";
+    });
+});
+
+let size;
+sizeBtn.addEventListener('click', () => {
+    size = prompt("Enter the size for the grid.")
+
+    clearGrid();
+
+    changeSize(size);
+});
+
+let changeSize = (size) => {
+    container.style.setProperty('--grid-size', size);
+    for (let i = 0; i < size * size; i++) {
         const div = document.createElement('div');
         div.classList.add("grid-item");
         container.appendChild(div);
     }
+
+    const gridItems = document.querySelectorAll(".grid-item");
+    gridItems.forEach(item => {
+        item.addEventListener("mouseover", () => {
+            item.style.backgroundColor = "black";
+        });
+    });
 }
 
-const gridItems = document.querySelectorAll(".grid-item");
+let clearGrid = () => {
+    while(container.firstChild){
+        container.removeChild(container.firstChild);
+    }
+}
 
-gridItems.forEach(item => {
-    item.addEventListener("mouseover", () => {
-        item.style.backgroundColor = "black";
-    });
-});
+
+
+changeSize(16)
