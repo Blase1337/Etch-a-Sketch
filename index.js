@@ -12,11 +12,19 @@ resetBtn.addEventListener('click', () => {
 
 let size;
 sizeBtn.addEventListener('click', () => {
-    size = prompt("Enter the size for the grid.")
+    size = prompt("Enter the size for the grid. Any size more than 100 will be set to 100.")
+    if (size > 100){
+        size = 100
 
-    clearGrid();
+        clearGrid();
 
-    changeSize(size);
+        changeSize(size);
+    }
+    else {
+        clearGrid();
+
+        changeSize(size);
+    }
 });
 
 let changeSize = (size) => {
