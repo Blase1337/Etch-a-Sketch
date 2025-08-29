@@ -1,3 +1,5 @@
 # Etch-a-Sketch
-This project will use flexbox and javascript to create a etch-a-sketch in the browser.
-I will be using for loops for the 16x16 grid and onhover events for each div created
+A browser-based Etch-a-Sketch clone built with HTML, CSS, and JavaScript. 
+Users can resize the grid (up to 100×100), 
+draw by hovering over cells, and reset the board at any time. 
+This project focuses on DOM manipulation, CSS variables, and event handling to create an interactive UI.
